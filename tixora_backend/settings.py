@@ -117,7 +117,7 @@ SIMPLE_JWT = {
         days=int(os.getenv('JWT_REFRESH_TOKEN_LIFETIME_DAYS', 7))
     ),
     'ROTATE_REFRESH_TOKENS': True,         # New refresh token on each use
-    'BLACKLIST_AFTER_ROTATION': False,     # Keep simple for now
+    'BLACKLIST_AFTER_ROTATION': True,     
     'AUTH_HEADER_TYPES': ('Bearer',),
     'TOKEN_OBTAIN_SERIALIZER': 'apps.users.serializers.TixoraTokenObtainPairSerializer',
 }
