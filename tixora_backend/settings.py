@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'tixora_backend.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATES = [
     {
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'tixora_backend.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 # ─── Database (PostgreSQL) ────────────────────────────────────────────────────
 DATABASES = {
