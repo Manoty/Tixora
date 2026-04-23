@@ -80,3 +80,60 @@ class Event(models.Model):
         return self.ticket_types.aggregate(
             total=models.Sum('quantity_sold')
         )['total'] or 0
+        
+# apps/events/models.py  (continued — same file)
+
+class TicketType(models.Model):
+    """
+    Defines a tier of ticket for an event.
+    e.g.: Regular (KES 500, 500 seats), VIP (KES 2000, 50 seats)
+
+    WHY SEPARATE FROM TICKET?
+    - TicketType is a template/config: price, qty, name
+    - Ticket is an issued instance: who owns it, QR code, etc.
+    - Separating them prevents data duplication and allows
+      price changes without affecting already-issued tickets.
+    """
+    id              = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    event           = models.ForeignKey(
+                        Event,
+                        on_delete=models.CASCADE,
+                        related_name='ticket_types'
+                      )
+
+    name            = models.CharField(max_length=100)        # "VIP", "Regular", "Early Bird"
+    description     = models.TextField(blank=True)
+    price           = models.DecimalField(max_digits=10, decimal_places=2)
+    total_quantity  = models.PositiveIntegerField()
+    quantity_sold   = models.PositiveIntegerField(default=0)  # Incremented on confirmed payment
+    max_per_order   = models.PositiveIntegerField(default=5)  # Anti-scalping
+
+    sale_start      = models.DateTimeField(null=True, blank=True)
+    sale_end        = models.DateTimeField(null=True, blank=True)
+
+    is_active       = models.BooleanField(default=True)
+    created_at      = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = 'tixora_ticket_types'
+        unique_together = ['event', 'name']  # Can't have two "VIP" tiers for same event
+
+    def __str__(self):
+        return f"{self.event.title} — {self.name} (KES {self.price})"
+
+    @property
+    def quantity_available(self):
+        return self.total_quantity - self.quantity_sold
+
+    @property
+    def is_sold_out(self):
+        return self.quantity_available <= 0
+
+    @property
+    def is_on_sale(self):
+        now = timezone.now()
+        if self.sale_start and now < self.sale_start:
+            return False
+        if self.sale_end and now > self.sale_end:
+            return False
+        return self.is_active and not self.is_sold_out        
