@@ -4,7 +4,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import api                 from '../../api/axios';
 import { useAuth }         from '../../context/AuthContext';
 
+
+import { useSearchParams } from 'react-router-dom';
+
 export default function Login() {
+  const [searchParams] = useSearchParams();
+  const sessionExpired  = searchParams.get('expired') === 'true';
+
   const [form,    setForm]    = useState({ email: '', password: '' });
   const [error,   setError]   = useState('');
   const [loading, setLoading] = useState(false);
@@ -44,6 +50,11 @@ export default function Login() {
 
         <div className="card">
           <form onSubmit={handleSubmit}>
+            {sessionExpired && (
+              <div style={{ background: '#FEF3C7', color: '#92400E', padding: '12px 16px', borderRadius: 8, marginBottom: 16, fontSize: 14, fontWeight: 600 }}>
+                ⏰ Your session expired. Please sign in again.
+              </div>
+            )}
             {error && (
               <div style={{ background: '#FEE2E2', color: '#991B1B', padding: '12px 16px', borderRadius: 8, marginBottom: 16, fontSize: 14 }}>
                 {error}
