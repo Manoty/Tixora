@@ -175,6 +175,10 @@ MPESA_CALLBACK_URL    = os.getenv('MPESA_CALLBACK_URL', '')
 MPESA_ENVIRONMENT     = os.getenv('MPESA_ENVIRONMENT', 'sandbox')
 
 # ─── Logging Configuration ────────────────────────────────────────────────────
+LOG_DIR = BASE_DIR / 'logs'
+LOG_DIR.mkdir(parents=True, exist_ok=True)
+LOG_FILE = str(LOG_DIR / 'tixora.log')
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -191,7 +195,7 @@ LOGGING = {
         },
         'file': {
             'class':     'logging.FileHandler',
-            'filename':  BASE_DIR / 'logs/tixora.log',
+            'filename':  LOG_FILE,
             'formatter': 'tixora',
         },
     },
