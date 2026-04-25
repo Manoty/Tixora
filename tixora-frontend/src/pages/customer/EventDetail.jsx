@@ -52,6 +52,9 @@ export default function EventDetail() {
     }
   };
 
+  // Check if all ticket types are sold out
+  const allSoldOut = event?.ticket_types.every(tt => tt.is_sold_out);
+
   if (loading) return <div className="loading">Loading event...</div>;
   if (!event)  return null;
 
@@ -97,6 +100,12 @@ export default function EventDetail() {
           <div style={{ position: 'sticky', top: 80 }}>
             <div className="card">
               <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20 }}>Select Tickets</h2>
+
+              {allSoldOut && (
+                <div style={{ background: '#FEE2E2', color: '#991B1B', padding: '16px', borderRadius: 8, marginBottom: 16, fontWeight: 600, textAlign: 'center' }}>
+                  🔴 This event is sold out
+                </div>
+              )}
 
               {error && (
                 <div style={{ background: '#FEE2E2', color: '#991B1B', padding: '10px 14px', borderRadius: 8, marginBottom: 16, fontSize: 14 }}>
@@ -151,7 +160,7 @@ export default function EventDetail() {
                 <button
                   className="btn btn-primary"
                   style={{ width: '100%', justifyContent: 'center', fontSize: 16, padding: '14px' }}
-                  disabled={itemCount === 0 || ordering || !event.is_on_sale}
+                  disabled={itemCount === 0 || ordering || !event.is_on_sale || allSoldOut}
                   onClick={handleOrder}
                 >
                   {ordering ? 'Creating Order...' : itemCount > 0 ? `Buy ${itemCount} Ticket${itemCount > 1 ? 's' : ''}` : 'Select Tickets'}
