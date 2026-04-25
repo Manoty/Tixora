@@ -8,6 +8,7 @@ from rest_framework.views import APIView
 
 from apps.users.permissions import IsOrganizerOrAdmin
 from apps.events.models import Event
+from django.db.models import Count, Q
 from .models import CheckIn
 from .serializers import ScanTicketSerializer, CheckInSerializer
 from .services import CheckInService
@@ -107,22 +108,15 @@ class EventCheckInListView(APIView):
 
 
 class EventCheckInStatsView(APIView):
-    """
-    GET /api/v1/checkins/event/<event_id>/stats/
-    Live entry stats for the organizer dashboard.
-    """
     permission_classes = [IsOrganizerOrAdmin]
 
     def get(self, request, event_id):
         if request.user.role == 'organizer':
-            event = get_object_or_404(
-                Event, id=event_id, organizer=request.user
-            )
+            event = get_object_or_404(Event, id=event_id, organizer=request.user)
         else:
             event = get_object_or_404(Event, id=event_id)
 
         from apps.tickets.models import Ticket
-        from django.db.models import Count
 
         total_tickets = Ticket.objects.filter(
             ticket_type__event=event,
@@ -134,38 +128,40 @@ class EventCheckInStatsView(APIView):
             status=Ticket.Status.USED
         ).count()
 
-        not_yet_entered = total_tickets - admitted
-
-        # Breakdown by ticket type
         breakdown = Ticket.objects.filter(
             ticket_type__event=event
-        ).values(
-            'ticket_type__name'
-        ).annotate(
+        ).values('ticket_type__name').annotate(
             total=Count('id'),
-            used=Count('id', filter=__import__('django.db.models', fromlist=['Q']).Q(status='used'))
+            used=Count('id', filter=Q(status='used'))
         )
 
-        # Recent scans (last 10)
+        breakdown_data = [{
+            'ticket_type': b['ticket_type__name'],
+            'total':       b['total'],
+            'admitted':    b['used'],
+            'remaining':   b['total'] - b['used'],
+        } for b in breakdown]
+
         recent_scans = CheckIn.objects.filter(
             ticket__ticket_type__event=event
         ).select_related(
             'ticket__owner',
-            'ticket__ticket_type'
+            'ticket__ticket_type',
         ).order_by('-scanned_at')[:10]
 
         recent_data = [{
-            'ticket_type':  s.ticket.ticket_type.name if s.ticket else 'Unknown',
-            'owner':        s.ticket.owner.get_full_name() if s.ticket else 'Unknown',
-            'result':       s.result,
-            'scanned_at':   s.scanned_at.strftime('%H:%M:%S'),
+            'ticket_type': s.ticket.ticket_type.name if s.ticket else 'Unknown',
+            'owner':       s.ticket.owner.get_full_name() if s.ticket else 'Unknown',
+            'result':      s.result,
+            'scanned_at':  s.scanned_at.strftime('%H:%M:%S'),
         } for s in recent_scans]
 
         return Response({
             'event':           event.title,
             'total_tickets':   total_tickets,
             'admitted':        admitted,
-            'not_yet_entered': not_yet_entered,
+            'not_yet_entered': total_tickets - admitted,
             'attendance_pct':  round((admitted / total_tickets * 100), 1) if total_tickets else 0,
+            'breakdown':       breakdown_data,
             'recent_scans':    recent_data,
         })
