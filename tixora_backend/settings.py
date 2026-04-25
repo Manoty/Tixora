@@ -163,3 +163,48 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# ─── M-Pesa Configuration ─────────────────────────────────────────────────────
+MPESA_CONSUMER_KEY    = os.getenv('MPESA_CONSUMER_KEY', '')
+MPESA_CONSUMER_SECRET = os.getenv('MPESA_CONSUMER_SECRET', '')
+MPESA_SHORTCODE       = os.getenv('MPESA_SHORTCODE', '')
+MPESA_PASSKEY         = os.getenv('MPESA_PASSKEY', '')
+MPESA_CALLBACK_URL    = os.getenv('MPESA_CALLBACK_URL', '')
+MPESA_ENVIRONMENT     = os.getenv('MPESA_ENVIRONMENT', 'sandbox')
+
+# ─── Logging Configuration ────────────────────────────────────────────────────
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'tixora': {
+            'format': '[{asctime}] [{levelname}] {name}: {message}',
+            'style':  '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class':     'logging.StreamHandler',
+            'formatter': 'tixora',
+        },
+        'file': {
+            'class':     'logging.FileHandler',
+            'filename':  BASE_DIR / 'logs/tixora.log',
+            'formatter': 'tixora',
+        },
+    },
+    'loggers': {
+        'apps.payments': {
+            'handlers':  ['console', 'file'],
+            'level':     'INFO',
+            'propagate': False,
+        },
+        'apps.orders': {
+            'handlers':  ['console', 'file'],
+            'level':     'INFO',
+            'propagate': False,
+        },
+    },
+}
