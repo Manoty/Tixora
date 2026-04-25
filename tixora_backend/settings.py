@@ -106,7 +106,23 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 20,
     'NON_FIELD_ERRORS_KEY': 'errors',
+    
+    'DEFAULT_THROTTLE_CLASSES': (
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle',
+    ),
+    'DEFAULT_THROTTLE_RATES': {
+        'anon':    '100/hour',
+        'user':    '1000/hour',
+        'auth':    '10/minute',
+        'payment': '5/minute',
+        'scan':    '60/minute',
+    },
+
+    # ── Exception handler ──────────────────────────────────────────────────
+    'EXCEPTION_HANDLER': 'tixora_backend.exceptions.tixora_exception_handler',
 }
+
 
 # ─── JWT Configuration ────────────────────────────────────────────────────────
 SIMPLE_JWT = {
