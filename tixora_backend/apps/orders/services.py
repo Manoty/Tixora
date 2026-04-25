@@ -72,6 +72,19 @@ class OrderService:
                 errors.append(f'"{tt.event.title}" is not currently on sale.')
                 continue
 
+            # Is the event cancelled?
+            if tt.event.status == 'cancelled':
+                errors.append(
+                    f'"{tt.event.title}" has been cancelled. '
+                    f'Please contact the organizer for refund information.'
+                )
+                continue
+
+            # Has the event already ended?
+            if tt.event.end_date < timezone.now():
+                errors.append(f'"{tt.event.title}" has already ended.')
+                continue
+
             # Is the ticket type active and on sale?
             if not tt.is_active:
                 errors.append(f'"{tt.name}" tickets are not available.')
@@ -100,7 +113,7 @@ class OrderService:
                 'ticket_type': tt,
                 'quantity':    quantity,
                 'price':       tt.price,   # Snapshot current price
-            })
+            })    
 
         if errors:
             raise ValidationError({'items': errors})
