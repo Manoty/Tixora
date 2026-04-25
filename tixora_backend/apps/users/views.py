@@ -7,6 +7,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.tokens import RefreshToken
+from throttles import AuthRateThrottle
 
 from .serializers import (
     TixoraTokenObtainPairSerializer,
@@ -25,6 +26,7 @@ class TixoraLoginView(TokenObtainPairView):
     Uses our custom serializer to include role in JWT payload.
     """
     serializer_class = TixoraTokenObtainPairSerializer
+    throttle_classes = [AuthRateThrottle]
 
 
 class RegisterView(APIView):
@@ -33,6 +35,7 @@ class RegisterView(APIView):
     Public endpoint — no auth required.
     """
     permission_classes = [AllowAny]
+    throttle_classes = [AuthRateThrottle]
 
     def post(self, request):
         serializer = RegisterSerializer(data=request.data)
@@ -133,4 +136,4 @@ class ChangePasswordView(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response({'message': 'Password updated successfully.'})
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)    
