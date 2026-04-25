@@ -7,6 +7,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.exceptions import ValidationError
 
+from throttles import PaymentRateThrottle
+
 from .serializers import InitiatePaymentSerializer, PaymentStatusSerializer
 from .services import PaymentService
 from django.views.decorators.csrf import csrf_exempt
@@ -21,6 +23,7 @@ class InitiatePaymentView(APIView):
     Customer initiates M-Pesa STK Push for a reserved order.
     """
     permission_classes = [IsAuthenticated]
+    throttle_classes   = [PaymentRateThrottle]
 
     def post(self, request):
         serializer = InitiatePaymentSerializer(data=request.data)

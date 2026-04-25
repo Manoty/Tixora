@@ -9,6 +9,8 @@ from rest_framework.views import APIView
 from apps.users.permissions import IsOrganizerOrAdmin
 from apps.events.models import Event
 from django.db.models import Count, Q
+
+from throttles import ScanRateThrottle
 from .models import CheckIn
 from .serializers import ScanTicketSerializer, CheckInSerializer
 from .services import CheckInService
@@ -26,6 +28,7 @@ class ScanTicketView(APIView):
     - Organizers (only their events, enforced via event_id)
     """
     permission_classes = [IsOrganizerOrAdmin]
+    throttle_classes   = [ScanRateThrottle]
 
     def post(self, request):
         serializer = ScanTicketSerializer(data=request.data)
