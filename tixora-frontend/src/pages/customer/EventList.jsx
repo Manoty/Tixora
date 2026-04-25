@@ -63,6 +63,7 @@ export default function EventList() {
   const [loading, setLoading] = useState(true);
   const [search,  setSearch]  = useState('');
   const [city,    setCity]    = useState('');
+  const [expiredOrder, setExpiredOrder] = useState(false);
 
   const fetchEvents = async () => {
     setLoading(true);
@@ -80,7 +81,17 @@ export default function EventList() {
     }
   };
 
-  useEffect(() => { fetchEvents(); }, []);
+  useEffect(() => {
+    // Check for expired order query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('expired_order') === 'true') {
+      setExpiredOrder(true);
+      // Clean up URL
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+
+    fetchEvents();
+  }, []);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -118,6 +129,12 @@ export default function EventList() {
 
       {/* Events Grid */}
       <div className="container" style={{ padding: '40px 24px' }}>
+        {expiredOrder && (
+          <div style={{ background: '#FEF3C7', color: '#92400E', padding: '16px', borderRadius: 8, marginBottom: 24, fontWeight: 600, textAlign: 'center' }}>
+            ⏰ Your order reservation expired. Please try booking again.
+          </div>
+        )}
+
         {loading ? (
           <div className="loading">Loading events...</div>
         ) : events.length === 0 ? (

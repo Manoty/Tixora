@@ -25,6 +25,27 @@ export default function Checkout() {
     return () => clearInterval(pollRef.current);
   }, [reference]);
 
+  // Order expiry monitoring
+  useEffect(() => {
+    if (!order) return;
+    if (order.status === 'cancelled') {
+      navigate('/?expired_order=true');
+      return;
+    }
+    // Auto-check expiry every 30 seconds
+    const timer = setInterval(async () => {
+      try {
+        const { data } = await api.get(`/orders/${reference}/`);
+        setOrder(data);
+        if (data.status === 'cancelled') {
+          clearInterval(timer);
+          navigate('/?expired_order=true');
+        }
+      } catch {}
+    }, 30000);
+    return () => clearInterval(timer);
+  }, [order?.status, reference, navigate]);
+
   const startPolling = () => {
     setPolling(true);
     setMessage('Waiting for M-Pesa confirmation...');
