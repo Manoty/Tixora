@@ -45,8 +45,8 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 # ─── Middleware ───────────────────────────────────────────────────────────────
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # Must be first
-    'tixora_backend.middleware.SecurityHeadersMiddleware', 
-    'tixora_backend.middleware.RequestSizeMiddleware',      
+    'middleware.SecurityHeadersMiddleware',
+    'middleware.RequestSizeMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -122,7 +122,7 @@ REST_FRAMEWORK = {
     },
 
     # ── Exception handler ──────────────────────────────────────────────────
-    'EXCEPTION_HANDLER': 'tixora_backend.exceptions.tixora_exception_handler',
+    'EXCEPTION_HANDLER': 'exceptions.tixora_exception_handler',
 }
 
 
