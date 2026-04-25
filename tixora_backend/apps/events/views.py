@@ -285,21 +285,6 @@ class TicketTypeDetailView(APIView):
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def delete(self, request, event_id, tt_id):
-        _, ticket_type = self.get_objects(request, event_id, tt_id)
-
-        if ticket_type.quantity_sold > 0:
-            return Response(
-                {'error': 'Cannot delete a ticket type with sold tickets.'},
-                status=status.HTTP_400_BAD_REQUEST
-            )
-
-        ticket_type.delete()
-        return Response(
-            {'message': f'Ticket type "{ticket_type.name}" deleted.'},
-            status=status.HTTP_200_OK
-        )
-
 
 # ─── Organizer Sales Summary ──────────────────────────────────────────────────
 
