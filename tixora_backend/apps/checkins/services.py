@@ -1,5 +1,6 @@
 # apps/checkins/services.py
 import logging
+import uuid as uuid_module
 from django.db import transaction
 from django.utils import timezone
 
@@ -51,6 +52,23 @@ class CheckInService:
         admitted  = False
         info      = {}
 
+        try:
+            uuid_module.UUID(str(scanned_uuid))
+        except ValueError:
+            result = CheckIn.Result.INVALID_TICKET
+            notes  = f'Malformed UUID: {scanned_uuid[:100]}'  # Truncate for safety
+            logger.warning(
+                f"[Tixora-Scan] Malformed UUID from {scanned_by.email}: "
+                f"{scanned_uuid[:50]}"
+            )
+            CheckInService._log_scan(
+                ticket=None,
+                scanned_by=scanned_by,
+                scanned_uuid=str(scanned_uuid)[:100],
+                result=result,
+                notes=notes,
+            )
+            return CheckInService._build_response(result, False, {})
         try:
             # ── Step 1: Find the ticket — lock the row ─────────────────
             try:
