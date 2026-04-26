@@ -1,0 +1,187 @@
+[2026-04-25 20:51:58,073] [INFO] apps.payments.mpesa: [Tixora-MPesa] STK Push for order TIX-20260425-XC2RBN: ResponseCode=0 CheckoutRequestID=ws_CO_25042026205158295741753710
+[2026-04-25 20:51:58,077] [INFO] apps.payments.services: [Tixora-Payment] STK Push sent for order TIX-20260425-XC2RBN to 254741753710. CheckoutID: ws_CO_25042026205158295741753710
+[2026-04-25 20:52:03,400] [INFO] apps.payments.services: [Tixora-Poll] STK status for TIX-20260425-XC2RBN: {'ResponseCode': '0', 'ResponseDescription': 'The service request has been accepted successfully', 'MerchantRequestID': 'd930-4248-becf-279e7043e76824072', 'CheckoutRequestID': 'ws_CO_25042026205158295741753710', 'ResultCode': '4999', 'ResultDesc': 'The transaction is still under processing'}
+[2026-04-25 20:52:06,048] [INFO] apps.payments.services: [Tixora-Poll] STK status for TIX-20260425-XC2RBN: {'fault': {'faultstring': 'Spike arrest violation. Allowed rate : MessageRate{messagesPerPeriod=5, periodInMicroseconds=60000000, maxBurstMessageCount=1.0}', 'detail': {'errorcode': 'policies.ratelimit.SpikeArrestViolation'}}}
+[2026-04-25 20:52:08,824] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Status query failed: Expecting value: line 1 column 1 (char 0)
+[2026-04-25 20:52:08,825] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not query M-Pesa status.
+[2026-04-25 20:52:10,844] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:52:10,845] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:52:13,937] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:52:13,938] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:52:17,316] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:52:17,317] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:52:19,910] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:52:19,910] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:52:23,027] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:52:23,027] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:52:25,982] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:52:25,983] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:52:28,901] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:52:28,902] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:52:31,872] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:52:31,873] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:52:34,886] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:52:34,887] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:52:37,886] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:52:37,886] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:52:40,857] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:52:40,858] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:52:44,072] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:52:44,072] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:52:46,868] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:52:46,868] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:52:49,862] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:52:49,862] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:52:52,889] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:52:52,890] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:52:55,986] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:52:55,987] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:52:58,912] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:52:58,912] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:53:01,874] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:53:01,874] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:53:04,880] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:53:04,881] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:53:07,982] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:53:07,983] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:53:10,872] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:53:10,873] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:53:13,879] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:53:13,880] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:53:16,994] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:53:16,994] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:53:19,856] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:53:19,857] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:53:22,878] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:53:22,879] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:53:25,965] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:53:25,965] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:53:29,534] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:53:29,535] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:53:32,559] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:53:32,560] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:53:35,472] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:53:35,472] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:53:38,516] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:53:38,517] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:53:41,709] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:53:41,709] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:53:44,708] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:53:44,710] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:53:47,640] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:53:47,640] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:53:50,548] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:53:50,549] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:53:53,542] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:53:53,543] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:53:56,841] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:53:56,841] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:53:59,496] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:53:59,496] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:54:02,508] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:54:02,509] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:54:05,546] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:54:05,547] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:54:08,458] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:54:08,459] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:54:11,646] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:54:11,647] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:54:14,608] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:54:14,608] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:54:17,626] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:54:17,627] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:54:19,885] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:54:19,886] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:54:22,915] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:54:22,916] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:54:26,023] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:54:26,024] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:54:29,757] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:54:29,758] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:54:32,857] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:54:32,858] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:54:35,656] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:54:35,657] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:54:38,604] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:54:38,605] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:54:41,973] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:54:41,973] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:54:44,890] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:54:44,891] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:54:47,640] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:54:47,640] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:54:50,452] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:54:50,453] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:54:53,692] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:54:53,692] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:54:56,607] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:54:56,607] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 20:54:59,635] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-25 20:54:59,636] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-25 21:14:36,745] [INFO] apps.orders.management.commands.expire_reservations: [Tixora-Cleanup] Expired reservation: TIX-20260425-XC2RBN
+[2026-04-25 21:14:36,752] [INFO] apps.orders.management.commands.expire_reservations: [Tixora-Cleanup] Expired reservation: TIX-20260425-MJ61KL
+[2026-04-26 21:17:39,641] [INFO] apps.payments.mpesa: [Tixora-MPesa] STK Push for order TIX-20260426-XGR1AA: ResponseCode=0 CheckoutRequestID=ws_CO_26042026211740857712432771
+[2026-04-26 21:17:39,653] [INFO] apps.payments.services: [Tixora-Payment] STK Push sent for order TIX-20260426-XGR1AA to 254712432771. CheckoutID: ws_CO_26042026211740857712432771
+[2026-04-26 21:17:45,933] [INFO] apps.payments.services: [Tixora-Poll] STK status for TIX-20260426-XGR1AA: {'ResponseCode': '0', 'ResponseDescription': 'The service request has been accepted successfully', 'MerchantRequestID': 'e55d-4519-86bb-379cf05dbfb425089', 'CheckoutRequestID': 'ws_CO_26042026211740857712432771', 'ResultCode': '1037', 'ResultDesc': 'DS timeout user cannot be reached.'}
+[2026-04-26 21:17:48,523] [INFO] apps.payments.services: [Tixora-Poll] STK status for TIX-20260426-XGR1AA: {'ResponseCode': '0', 'ResponseDescription': 'The service request has been accepted successfully', 'MerchantRequestID': 'e55d-4519-86bb-379cf05dbfb425089', 'CheckoutRequestID': 'ws_CO_26042026211740857712432771', 'ResultCode': '1037', 'ResultDesc': 'DS timeout user cannot be reached.'}
+[2026-04-26 21:17:50,755] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Status query failed: Expecting value: line 1 column 1 (char 0)
+[2026-04-26 21:17:50,755] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not query M-Pesa status.
+[2026-04-26 21:17:52,948] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:17:52,948] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:17:55,881] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:17:55,882] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:17:58,777] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:17:58,777] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:18:01,706] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:18:01,707] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:18:05,355] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:18:05,356] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:18:07,773] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:18:07,773] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:18:10,908] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:18:10,908] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:18:13,858] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:18:13,859] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:18:17,296] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:18:17,296] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:18:20,378] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:18:20,378] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:18:23,855] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:18:23,856] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:18:28,151] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:18:28,196] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:18:31,951] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:18:31,951] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:18:33,261] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:18:33,261] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:18:35,258] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:18:35,259] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:18:38,390] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:18:38,391] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:18:41,343] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:18:41,343] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:18:44,162] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:18:44,162] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:18:47,874] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:18:47,875] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:18:50,849] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:18:50,849] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:18:53,172] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:18:53,172] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:18:56,788] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:18:56,789] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:18:59,361] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:18:59,395] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:19:02,138] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:19:02,139] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:19:05,382] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:19:05,383] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:19:08,276] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:19:08,277] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:19:11,169] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:19:11,169] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:19:14,108] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:19:14,109] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:19:17,334] [ERROR] apps.payments.mpesa: [Tixora-MPesa] Failed to get access token: 403 Client Error: Forbidden for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+[2026-04-26 21:19:17,335] [WARNING] apps.payments.services: [Tixora-Poll] Status query failed: Could not connect to M-Pesa. Please try again.
+[2026-04-26 21:20:14,826] [INFO] apps.payments.services: [Tixora-Poll] STK status for TIX-20260426-XGR1AA: {'ResponseCode': '0', 'ResponseDescription': 'The service request has been accepted successfully', 'MerchantRequestID': 'e55d-4519-86bb-379cf05dbfb425089', 'CheckoutRequestID': 'ws_CO_26042026211740857712432771', 'ResultCode': '1037', 'ResultDesc': 'DS timeout user cannot be reached.'}
