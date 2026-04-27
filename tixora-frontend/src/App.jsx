@@ -1,21 +1,27 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
-import ProtectedRoute from './components/ProtectedRoute';
-import Navbar from './components/Navbar';
+import { AuthProvider }   from './context/AuthContext';
+import ProtectedRoute     from './components/ProtectedRoute';
+import Navbar             from './components/Navbar';
 
-import Login from './pages/auth/Login';
-import Register from './pages/auth/Register';
+// Auth
+import Login              from './pages/auth/Login';
+import Register           from './pages/auth/Register';
 
-import EventList from './pages/customer/EventList';
-import EventDetail from './pages/customer/EventDetail';
-import Checkout from './pages/customer/Checkout';
-import MyTickets from './pages/customer/MyTickets';
-import CustomerDashboard from './pages/customer/Dashboard';
+// Customer
+import EventList          from './pages/customer/EventList';
+import EventDetail        from './pages/customer/EventDetail';
+import Checkout           from './pages/customer/Checkout';
+import MyTickets          from './pages/customer/MyTickets';
+import CustomerDashboard  from './pages/customer/Dashboard';
 
+// Organizer
 import OrganizerDashboard from './pages/organizer/OrganizerDashboard';
-import Scanner from './pages/admin/Scanner';
 
-function Layout({ children }) {
+// Admin
+import Scanner            from './pages/admin/Scanner';
+
+/* Scanner has its own full-screen layout — no Navbar */
+function WithNav({ children }) {
   return (
     <>
       <Navbar />
@@ -30,45 +36,49 @@ export default function App() {
       <BrowserRouter>
         <Routes>
 
-          {/* Public */}
-          <Route path="/" element={<Layout><EventList /></Layout>} />
-          <Route path="/events/:slug" element={<Layout><EventDetail /></Layout>} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          {/* ── Public ────────────────────────── */}
+          <Route path="/"              element={<WithNav><EventList /></WithNav>} />
+          <Route path="/events/:slug"  element={<WithNav><EventDetail /></WithNav>} />
+          <Route path="/login"         element={<Login />} />
+          <Route path="/register"      element={<Register />} />
 
-          {/* Customer */}
+          {/* ── Customer ──────────────────────── */}
           <Route path="/dashboard" element={
             <ProtectedRoute roles={['customer']}>
-              <Layout><CustomerDashboard /></Layout>
+              <WithNav><CustomerDashboard /></WithNav>
             </ProtectedRoute>
           } />
-
           <Route path="/checkout/:reference" element={
             <ProtectedRoute roles={['customer']}>
-              <Layout><Checkout /></Layout>
+              <WithNav><Checkout /></WithNav>
             </ProtectedRoute>
           } />
-
           <Route path="/my-tickets" element={
             <ProtectedRoute roles={['customer']}>
-              <Layout><MyTickets /></Layout>
+              <WithNav><MyTickets /></WithNav>
+            </ProtectedRoute>
+          } />
+          <Route path="/tickets/order/:reference" element={
+            <ProtectedRoute roles={['customer']}>
+              <WithNav><MyTickets /></WithNav>
             </ProtectedRoute>
           } />
 
-          {/* Organizer */}
+          {/* ── Organizer ─────────────────────── */}
           <Route path="/organizer" element={
             <ProtectedRoute roles={['organizer']}>
-              <Layout><OrganizerDashboard /></Layout>
+              <WithNav><OrganizerDashboard /></WithNav>
             </ProtectedRoute>
           } />
 
-          {/* Admin */}
+          {/* ── Admin — full screen, no Navbar ── */}
           <Route path="/admin" element={
             <ProtectedRoute roles={['admin']}>
               <Scanner />
             </ProtectedRoute>
           } />
 
+          {/* ── Fallback ──────────────────────── */}
           <Route path="*" element={<Navigate to="/" replace />} />
 
         </Routes>
