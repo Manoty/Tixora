@@ -1,19 +1,10 @@
-"""
-WSGI config for tixora_backend project.
-
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/6.0/howto/deployment/wsgi/
-"""
-
+# tixora_backend/wsgi.py
 import os
-import sys
-
-# Add the project directory to the sys.path
-sys.path.insert(0, os.path.dirname(__file__))
-
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
+os.environ.setdefault(
+    'DJANGO_SETTINGS_MODULE',
+    os.environ.get('DJANGO_SETTINGS_MODULE', 'tixora_backend.settings_dev')
+)
+
 application = get_wsgi_application()
