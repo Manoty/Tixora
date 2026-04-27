@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+venv/
+.venv/
+env/
+
+# Django
+*.log
+*.pot
+local_settings.py
+db.sqlite3
+media/
+staticfiles/
+
+# Environment — CRITICAL: never commit these
+.env
+.env.*
+
+# Logs
+logs/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
