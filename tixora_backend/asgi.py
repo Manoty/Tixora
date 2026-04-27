@@ -9,11 +9,12 @@ https://docs.djangoproject.com/en/6.0/howto/deployment/asgi/
 
 import os
 import sys
+from pathlib import Path
 
-# Add the project directory to the sys.path
-sys.path.insert(0, os.path.dirname(__file__))
+# Add the parent directory to sys.path so the tixora_backend package is importable
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings_dev')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tixora_backend.settings_dev')
 application = get_asgi_application()

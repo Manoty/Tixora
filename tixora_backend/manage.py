@@ -1,12 +1,17 @@
 # manage.py
 import os
 import sys
+from pathlib import Path
 
 def main():
+    # Ensure the parent folder is on the import path so tixora_backend is importable
+    project_root = Path(__file__).resolve().parent.parent
+    sys.path.insert(0, str(project_root))
+
     # Default to dev settings — override with DJANGO_SETTINGS_MODULE env var
     settings_module = os.environ.get(
         'DJANGO_SETTINGS_MODULE',
-        'settings_dev'
+        'tixora_backend.settings_dev'
     )
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
 
