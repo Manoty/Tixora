@@ -16,6 +16,7 @@ import CustomerDashboard  from './pages/customer/Dashboard';
 
 // Organizer
 import OrganizerDashboard from './pages/organizer/OrganizerDashboard';
+import CreateEvent        from './pages/organizer/CreateEvent';
 
 // Admin
 import Scanner            from './pages/admin/Scanner';
@@ -68,6 +69,11 @@ export default function App() {
           <Route path="/organizer" element={
             <ProtectedRoute roles={['organizer']}>
               <WithNav><OrganizerDashboard /></WithNav>
+            </ProtectedRoute>
+          } />
+          <Route path="/organizer/create" element={
+            <ProtectedRoute roles={['organizer']}>
+              <WithNav><CreateEvent /></WithNav>
             </ProtectedRoute>
           } />
 
