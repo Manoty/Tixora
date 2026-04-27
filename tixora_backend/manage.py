@@ -6,7 +6,7 @@ def main():
     # Default to dev settings — override with DJANGO_SETTINGS_MODULE env var
     settings_module = os.environ.get(
         'DJANGO_SETTINGS_MODULE',
-        'tixora_backend.settings_dev'
+        'settings_dev'
     )
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
 

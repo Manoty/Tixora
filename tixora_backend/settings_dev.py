@@ -1,5 +1,5 @@
 # tixora_backend/settings_dev.py
-from .settings import *
+from settings import *
 
 DEBUG = True
 
